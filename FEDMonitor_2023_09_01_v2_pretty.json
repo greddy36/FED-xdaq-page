@@ -1,0 +1,236 @@
+{
+    "table": {
+        "properties": {
+            "Name": "urn:xdaq-flashlist:FEDMonitor",
+            "LastUpdate": "Fri, Sep 01 2023 07:58:27 GMT",
+            "Version": "1.06",
+            "Tag": "pixel-metric",
+            "LastOriginator": "http://srv-s2b18-31-01.cms:1971/urn:xdaq-application:lid=5",
+            "Rows": 129
+        },
+        "definition": [
+            {
+                "key": "BoardCode",
+                "type": "string"
+            },
+            {
+                "key": "CntEvtRsyTot",
+                "type": "unsigned int 32"
+            },
+            {
+                "key": "CntTbmHidTot",
+                "type": "unsigned int 32"
+            },
+            {
+                "key": "CntTrlErrTot",
+                "type": "unsigned int 32"
+            },
+            {
+                "key": "EvtErrNumTot",
+                "type": "unsigned int 32"
+            },
+            {
+                "key": "EvtTmoNumTot",
+                "type": "unsigned int 32"
+            },
+            {
+                "key": "FWIPHCDate",
+                "type": "string"
+            },
+            {
+                "key": "FWIPHCVersion",
+                "type": "string"
+            },
+            {
+                "key": "L1ACount",
+                "type": "unsigned int 32"
+            },
+            {
+                "key": "MACAddress",
+                "type": "string"
+            },
+            {
+                "key": "NoTknPssTot",
+                "type": "unsigned int 32"
+            },
+            {
+                "key": "OvfNumTot",
+                "type": "unsigned int 32"
+            },
+            {
+                "key": "PLL_200MHz",
+                "type": "unsigned int 32"
+            },
+            {
+                "key": "PLL_200MHz_idelay",
+                "type": "unsigned int 32"
+            },
+            {
+                "key": "PLL_400MHz",
+                "type": "unsigned int 32"
+            },
+            {
+                "key": "PkamRstTot",
+                "type": "unsigned int 32"
+            },
+            {
+                "key": "RocErrNumTot",
+                "type": "unsigned int 32"
+            },
+            {
+                "key": "TTSState",
+                "type": "string"
+            },
+            {
+                "key": "TbmAtoRstTot",
+                "type": "unsigned int 32"
+            },
+            {
+                "key": "TimeInTTSBusy",
+                "type": "unsigned int 64"
+            },
+            {
+                "key": "TimeInTTSOOS",
+                "type": "unsigned int 64"
+            },
+            {
+                "key": "TimeInTTSReady",
+                "type": "unsigned int 64"
+            },
+            {
+                "key": "TimeInTTSWarn",
+                "type": "unsigned int 64"
+            },
+            {
+                "key": "TransitionsToTTSBusy",
+                "type": "unsigned int 32"
+            },
+            {
+                "key": "TransitionsToTTSOOS",
+                "type": "unsigned int 32"
+            },
+            {
+                "key": "TransitionsToTTSReady",
+                "type": "unsigned int 32"
+            },
+            {
+                "key": "TransitionsToTTSWarn",
+                "type": "unsigned int 32"
+            },
+            {
+                "key": "channelEnableStatus",
+                "type": "string"
+            },
+            {
+                "key": "channelMask",
+                "type": "string"
+            },
+            {
+                "key": "connectionName",
+                "type": "string"
+            },
+            {
+                "key": "context",
+                "type": "string"
+            },
+            {
+                "key": "lid",
+                "type": "string"
+            },
+            {
+                "key": "sessionid",
+                "type": "string"
+            },
+            {
+                "key": "stateName",
+                "type": "string"
+            },
+            {
+                "key": "tbmMask",
+                "type": "string"
+            },
+            {
+                "key": "timestamp",
+                "type": "time"
+            }
+        ],
+        "rows": [
+            {
+                "BoardCode": "PIX FED ",
+                "CntEvtRsyTot": 0,
+                "CntTbmHidTot": 0,
+                "CntTrlErrTot": 0,
+                "EvtErrNumTot": 0,
+                "EvtTmoNumTot": 0,
+                "FWIPHCDate": "2/6/23",
+                "FWIPHCVersion": "19.2",
+                "L1ACount": 128244,
+                "MACAddress": "08:00:30:00:23:a5",
+                "NoTknPssTot": 0,
+                "OvfNumTot": 0,
+                "PLL_200MHz": 1,
+                "PLL_200MHz_idelay": 1,
+                "PLL_400MHz": 1,
+                "PkamRstTot": 0,
+                "RocErrNumTot": 0,
+                "TTSState": "RDY",
+                "TbmAtoRstTot": 0,
+                "TimeInTTSBusy": 1219,
+                "TimeInTTSOOS": 0,
+                "TimeInTTSReady": 3184584373,
+                "TimeInTTSWarn": 0,
+                "TransitionsToTTSBusy": 326,
+                "TransitionsToTTSOOS": 0,
+                "TransitionsToTTSReady": 326,
+                "TransitionsToTTSWarn": 0,
+                "channelEnableStatus": "",
+                "channelMask": "000000000011000000000000000000000000000000000000",
+                "connectionName": "1297",
+                "context": "http://srv-s2b18-31-01.cms:1971",
+                "lid": "79",
+                "sessionid": "325375",
+                "stateName": "Running",
+                "tbmMask": "000000000011000000000000000000000000000000000000",
+                "timestamp": "2023-09-01T07:58:25.740239Z"
+            },
+            {
+                "BoardCode": "PIX FED ",
+                "CntEvtRsyTot": 0,
+                "CntTbmHidTot": 0,
+                "CntTrlErrTot": 0,
+                "EvtErrNumTot": 15068,
+                "EvtTmoNumTot": 116054,
+                "FWIPHCDate": "2/6/23",
+                "FWIPHCVersion": "19.2",
+                "L1ACount": 94063,
+                "MACAddress": "08:00:30:00:23:46",
+                "NoTknPssTot": 17468,
+                "OvfNumTot": 1,
+                "PLL_200MHz": 1,
+                "PLL_200MHz_idelay": 1,
+                "PLL_400MHz": 1,
+                "PkamRstTot": 62,
+                "RocErrNumTot": 1000,
+                "TTSState": "RDY",
+                "TbmAtoRstTot": 687,
+                "TimeInTTSBusy": 1219,
+                "TimeInTTSOOS": 0,
+                "TimeInTTSReady": 3113487714,
+                "TimeInTTSWarn": 0,
+                "TransitionsToTTSBusy": 326,
+                "TransitionsToTTSOOS": 0,
+                "TransitionsToTTSReady": 326,
+                "TransitionsToTTSWarn": 0,
+                "channelEnableStatus": "",
+                "channelMask": "000000000000000000000000000000000000000000000000",
+                "connectionName": "1334",
+                "context": "http://srv-s2b18-28-01.cms:1971",
+                "lid": "82",
+                "sessionid": "325375",
+                "stateName": "Running",
+                "tbmMask": "000000000000000000000000000000000000000000000000",
+                "timestamp": "2023-09-01T07:58:25.139198Z"
+            }
+        ]
+    }
+}
