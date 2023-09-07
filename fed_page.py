@@ -56,7 +56,7 @@ with open('FEDMonitor_2023_09_01_v2.json', 'r') as json_file:
     raw_data = json.load(json_file)
 @app.route('/index_work.html')
 def index():
-    #headers=raw_data['table']['definition']
+    #headers=raw_data['table']['definition']#this works too but we need custom ordering
     headers=[{"key":"connectionName"},{"key":"BoardCode"},{"key":"CntEvtRsyTot"},{"key":"CntTbmHidTot"},{"key":"CntTrlErrTot"},{"key":"EvtErrNumTot"},{"key":"EvtTmoNumTot"},{"key":"FWIPHCDate"},{"key":"FWIPHCVersion"},{"key":"L1ACount"},{"key":"MACAddress"},{"key":"NoTknPssTot"},{"key":"OvfNumTot"},{"key":"PLL_200MHz"},{"key":"PLL_200MHz_idelay"},{"key":"PLL_400MHz"},{"key":"PkamRstTot"},{"key":"RocErrNumTot"},{"key":"TTSState"},{"key":"TbmAtoRstTot"},{"key":"TimeInTTSBusy"},{"key":"TimeInTTSOOS"},{"key":"TimeInTTSReady"},{"key":"TimeInTTSWarn"},{"key":"TransitionsToTTSBusy"},{"key":"TransitionsToTTSOOS"},{"key":"TransitionsToTTSReady"},{"key":"TransitionsToTTSWarn"},{"key":"channelEnableStatus"},{"key":"channelMask"},{"key":"context"},{"key":"lid"},{"key":"sessionid"},{"key":"stateName"},{"key":"tbmMask"},{"key":"timestamp"}]  
         
     return render_template('index_work.html',
