@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+    <head>
+        <title>FED Fiesta</title>
+        <!-- <link rel="shortcut icon" type="image/x-icon" href="red-chili-pepper-v2.ico" /> -->
+        <style>
+            body {
+                font-family: Arial, sans-serif; /* Define the font for the body */
+            }
+            .gray-background {
+                background-color: #E5E5E5;
+            }
+            .green-background {
+                background-color: #ACF3A1;
+            }
+            .red-background {
+                background-color: #FF8E8E;
+            }
+            h1 {
+              font-size: 40px;
+            }
+            h2 {
+              font-size: 30px;
+            }
+            p {
+              font-size: 20px;
+            }
+            table {
+                width: 100%; /* Expand the table to full width */
+            }
+            th {
+                text-align: center; /* Center-align header cells */
+            }
+            td {
+                text-align: right; /* Right-align data cells */
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Pixel FED Monitoring</h1>
+		<a href="index_work.html">FED Monitoring by Guru</a>
+
+        
+        <h2>FED Status Summary</h2>
+        
+        <p>FEDs (total): {{fed_counts.n_total}}</p>
+        <ul>
+            <li style="color:#51b73b"><p>FEDs (OK): {{fed_counts.n_ok}}</p></li>
+            <li style="color:#fc2647"><p>FEDs (ERROR): {{fed_counts.n_error}}</p></li>
+        </ul>
+        
+        <h2>FED Status Table</h2>
+        
+        <table border = 1 class="gray-background">
+            <tr>
+                <th>Time</th>
+                <th>FED</th>
+                <th>Status</th>
+                <th>State</th>
+                <th>TTS State</th>
+                <th>EvtErrNumTot</th>
+                <th>RocErrNumTot</th>
+            </tr>
+            {% for fed in fed_data %}
+                {% if fed.EvtErrNumTot == 0 and fed.RocErrNumTot == 0 %}
+                    <tr class="green-background">
+                        <td>{{fed.timestamp}}</td>
+                        <td>{{fed.connectionName}}</td>
+                        <td>OK</td>
+                        <td>{{fed.stateName}}</td>
+                        <td>{{fed.TTSState}}</td>
+                        <td>{{fed.EvtErrNumTot}}</td>
+                        <td>{{fed.RocErrNumTot}}</td>
+                    </tr>
+                {% else %}
+                    <tr class="red-background">
+                        <td>{{fed.timestamp}}</td>
+                        <td>{{fed.connectionName}}</td>
+                        <td>ERROR</td>
+                        <td>{{fed.stateName}}</td>
+                        <td>{{fed.TTSState}}</td>
+                        <td>{{fed.EvtErrNumTot}}</td>
+                        <td>{{fed.RocErrNumTot}}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+    </body>
+</html>
