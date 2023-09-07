@@ -5,8 +5,9 @@
     <title>JSON Data Table</title>
     <style>
         /* Add this style to the div containing the table. Needed for horizontal scroll */
-        table-container {
+        .table-container {
             overflow-x: auto;
+            max-height: 75vh; /* Set a maximum height for floating header */
         }
 
         table {
@@ -62,37 +63,8 @@
             </tbody>
         </table>
     </div>
-	<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
-    <script>
-        // Function to handle column selection
-        function handleColumnSelection() {
-            const checkboxes = document.querySelectorAll('.column-selector');
-            checkboxes.forEach(checkbox => {
-                const columnKey = checkbox.getAttribute('data-column');
-                const cells = document.querySelectorAll(`td[data-column="${columnKey}"]`);
-                const headers = document.querySelectorAll(`th[data-column="${columnKey}"]`);
-                
-                checkbox.addEventListener('change', () => {
-                    if (checkbox.checked) {
-                        cells.forEach(cell => {
-                            cell.style.display = ''; // Show the cell
-                        });
-                        headers.forEach(header => {
-                            header.style.display = ''; // Show the header
-                        });
-                    } else {
-                        cells.forEach(cell => {
-                            cell.style.display = 'none'; // Hide the cell
-                        });
-                        headers.forEach(header => {
-                            header.style.display = 'none'; // Hide the header
-                        });
-                    }
-                });
-            });
-        }
-        // Call the function to initialize column selection
-        handleColumnSelection();
-    </script>	
+	<script src="{{ url_for('static', filename='select_column.js') }}"></script>	
+	<script src="{{ url_for('static', filename='sorttable.js') }}"></script>	
+	<script src="{{ url_for('static', filename='float_header.js') }}"></script>	
 </body>
 </html>
