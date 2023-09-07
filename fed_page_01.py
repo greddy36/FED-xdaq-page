@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import urllib.request
 import json
 
 app = Flask(__name__)
@@ -21,8 +22,12 @@ def process_data(input_data):
     return output_data
 #---------------------------------------------------
 # Sample JSON data
-with open('FEDMonitor_2023_09_01_v2.json', 'r') as json_file:
+# Define the proxy settings with authentication
+
+url = 'http://kvm-s3562-3-ip157-27.cms:9945/urn:xdaq-application:lid=16/retrieveCollection?fmt=json&flash=urn:xdaq-flashlist:FEDMonitor'
+with urllib.request.urlopen(url) as json_file:
     raw_data = json.load(json_file)
+    print(raw_data)
 @app.route('/')
 def index():
     headers=raw_data['table']['definition']
