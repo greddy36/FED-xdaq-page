@@ -56,15 +56,13 @@ with open('FEDMonitor_2023_09_01_v2.json', 'r') as json_file:
     raw_data = json.load(json_file)
 @app.route('/index_work.html')
 def index():
-    headers=raw_data['table']['definition']
-    #data=data['table']['rows']
-    #moving connectionName dictionary to front
-    fed_num = headers.pop(-7)
-    headers.insert(0,fed_num)    
+    #headers=raw_data['table']['definition']
+    headers=[{"key":"connectionName"},{"key":"BoardCode"},{"key":"CntEvtRsyTot"},{"key":"CntTbmHidTot"},{"key":"CntTrlErrTot"},{"key":"EvtErrNumTot"},{"key":"EvtTmoNumTot"},{"key":"FWIPHCDate"},{"key":"FWIPHCVersion"},{"key":"L1ACount"},{"key":"MACAddress"},{"key":"NoTknPssTot"},{"key":"OvfNumTot"},{"key":"PLL_200MHz"},{"key":"PLL_200MHz_idelay"},{"key":"PLL_400MHz"},{"key":"PkamRstTot"},{"key":"RocErrNumTot"},{"key":"TTSState"},{"key":"TbmAtoRstTot"},{"key":"TimeInTTSBusy"},{"key":"TimeInTTSOOS"},{"key":"TimeInTTSReady"},{"key":"TimeInTTSWarn"},{"key":"TransitionsToTTSBusy"},{"key":"TransitionsToTTSOOS"},{"key":"TransitionsToTTSReady"},{"key":"TransitionsToTTSWarn"},{"key":"channelEnableStatus"},{"key":"channelMask"},{"key":"context"},{"key":"lid"},{"key":"sessionid"},{"key":"stateName"},{"key":"tbmMask"},{"key":"timestamp"}]  
         
-    return render_template('index_work.html', 
-    						fed_data=process_data(raw_data['table']['rows']),
-    						headers=raw_data['table']['definition'])
+    return render_template('index_work.html',
+                 fed_data=process_data(raw_data['table']['rows']),
+                 headers=headers)
+ 
 @app.route('/display_fed_data.html')
 def fed_err_data():#for Caleb's error page        
     fed_data=process_data(raw_data['table']['rows'])

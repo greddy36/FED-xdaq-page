@@ -23,7 +23,7 @@
             background-color: #f2f2f2;
         }  
         img {
-        	max-width: 4%;
+        	max-width: 2%;
         	height: auto;
         }         
     </style>
@@ -43,7 +43,9 @@
     </tr>
 </thead>
 <body>
-    <h1>CMS Pixel FED Monitoring Table
+    <h1> 
+    	<img src="{{ url_for('static', filename='cms.png') }}" alt="CMS logo">
+    	CMS Pixel FED Monitoring Table
     	<img src="{{ url_for('static', filename='cat.gif') }}" alt="Animated GIF">
     </h1>
     <a href="display_fed_data.html">FED Status Summary by Caleb</a>
