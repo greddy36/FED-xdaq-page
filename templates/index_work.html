@@ -48,6 +48,8 @@
     	CMS Pixel FED Monitoring Table
     	<img src="{{ url_for('static', filename='cat.gif') }}" alt="Animated GIF">
     </h1>
+    <button id="toggleRefresh">Toggle Auto-Refresh</button>
+    <script>document.getElementById('toggleRefresh').addEventListener('click', toggleAutoRefresh);</script>
     <a href="display_fed_data.html">FED Status Summary by Caleb</a>
     <div class="table-container">
         <table class="sortable">
@@ -75,5 +77,6 @@
 	<script src="{{ url_for('static', filename='select_column.js') }}"></script>	
 	<script src="{{ url_for('static', filename='sorttable.js') }}"></script>	
 	<script src="{{ url_for('static', filename='float_header.js') }}"></script>
+	<script src="{{ url_for('static', filename='refresh_page.js') }}"></script>
 </body>
 </html>
