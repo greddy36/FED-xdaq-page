@@ -2,19 +2,10 @@
 <html>
     <head>
         <title>FED Fiesta</title>
-        <!-- <link rel="shortcut icon" type="image/x-icon" href="red-chili-pepper-v2.ico" /> -->
+        <link rel="icon" href="{{ url_for('static', filename='red-chili-pepper-v2.ico') }}" type="image/x-icon">
         <style>
             body {
                 font-family: Arial, sans-serif; /* Define the font for the body */
-            }
-            .gray-background {
-                background-color: #E5E5E5;
-            }
-            .green-background {
-                background-color: #ACF3A1;
-            }
-            .red-background {
-                background-color: #FF8E8E;
             }
             h1 {
               font-size: 40px;
@@ -34,12 +25,55 @@
             td {
                 text-align: right; /* Right-align data cells */
             }
+            .gray-background {
+                background-color: #E5E5E5;
+            }
+            .green-background {
+                background-color: #ACF3A1;
+            }
+            .red-background {
+                background-color: #FF8E8E;
+            }
+			#refresh-button-container {
+				text-align: left;
+				padding: 20px;
+			}
+			#refresh-button {
+				padding: 20px 40px;
+				background-color: #007bff;
+				color: #fff;
+				border: none;
+				cursor: pointer;
+				font-size: 20px;
+			}
+			#refresh-button:hover {
+				background-color: #0056b3;
+			}
+			#datetime-container {
+				text-align: left;		/* Center-align the content */
+				background-color: #999;	/* Background color */
+				color: #fff;			/* Text color */
+				padding: 10px;			/* Add some padding for spacing */
+				max-width: 400px;		/* Set a maximum width for the container */
+			}
+			#current-date, #current-time {
+				font-size: 18px;	/* Adjust font size */
+				margin-right: 10px;	/* Add spacing between date and time */
+			}
         </style>
     </head>
     <body>
         <h1>Pixel FED Monitoring</h1>
 		<a href="index_work.html">FED Monitoring by Guru</a>
+		
+        <div id="refresh-button-container">
+            <button id="refresh-button">Refresh</button>
+        </div>
 
+		<div id="datetime-container">
+			<span id="current-date"></span>
+			<span id="current-time"></span>
+		</div>
         
         <h2>FED Status Summary</h2>
         
@@ -85,5 +119,15 @@
                 {% endif %}
             {% endfor %}
         </table>
+		<script src="{{ url_for('static', filename='current-date-time.js') }}"></script>
+		<script>
+			// Get a reference to the "Refresh" button
+			const refreshButton = document.getElementById('refresh-button');
+		
+			// Add a click event listener to reload the page when the button is clicked
+			refreshButton.addEventListener('click', function() {
+				location.reload();
+			});
+		</script>
     </body>
 </html>
